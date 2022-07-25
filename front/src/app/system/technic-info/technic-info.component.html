@@ -1,0 +1,174 @@
+<section class="tecinfo">
+   <div class="container">
+      <div class="tecinfo__wrapper">
+         <div class="tecinfo__top">
+            <div class="tecinfo__top-item">
+               <p class="tecinfo__top-title">Код</p>
+               <input type="number" class="tecinfo__top-input">
+            </div>
+
+            <div class="tecinfo__top-item">
+               <p class="tecinfo__top-title">Поступил на учет</p>
+               <input type="date" class="tecinfo__top-input">
+            </div>
+
+            <div class="tecinfo__top-item">
+               <p class="tecinfo__top-title">Начало эксплуатации</p>
+               <input type="date" class="tecinfo__top-input">
+            </div>
+         </div>
+
+         <div class="tecinfo__main">
+            <div class="tecinfo__left">
+               <div class="tecinfo__left-top">
+                  <div class="tecinfo__item">
+                     <h4 class="tecinfo__item-title">Наименование</h4>
+                     <!-- <p class="tecinfo__item-text"></p> -->
+                     <p class="tecinfo__item-value">{{tec.name}}</p>
+                  </div>
+               </div>
+
+               <div class="tecinfo__left-info">
+                  <div class="tecinfo__info-sec">
+                     <h4 class="tecinfo__item-title">Габариты</h4>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Ширина</p>
+                        <p class="tecinfo__item-value">{{tec.width}} м</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Высота</p>
+                        <p class="tecinfo__item-value">{{tec.height}} м</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Длина</p>
+                        <p class="tecinfo__item-value">{{tec.length}} м</p>
+                     </div>
+                  </div>
+
+                  <div class="tecinfo__info-sec">
+                     <h4 class="tecinfo__item-title">Прочие габариты</h4>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Длина стрелы</p>
+                        <p class="tecinfo__item-value">{{tec.boomLength}} мм</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Эксплут. масса</p>
+                        <p class="tecinfo__item-value">{{tec.weight}} т.</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Ширина гусеницы</p>
+                        <p class="tecinfo__item-value">{{tec.trackWidth}} мм</p>
+                     </div>
+                  </div>
+
+                  <div class="tecinfo__info-sec">
+                     <h4 class="tecinfo__item-title">Двигатель</h4>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Мощность</p>
+                        <p class="tecinfo__item-value">{{tec.power}} кВт</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Объем</p>
+                        <p class="tecinfo__item-value">{{tec.volume}} л</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Расход топлива</p>
+                        <p class="tecinfo__item-value">{{tec.consumption}} л/ч</p>
+                     </div>
+                  </div>
+
+                  <div class="tecinfo__info-sec">
+                     <h4 class="tecinfo__item-title">Габариты ковша</h4>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Ширина ковша</p>
+                        <p class="tecinfo__item-value">{{tec.bucketWidth}} мм</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Длина рукояти</p>
+                        <p class="tecinfo__item-value">{{tec.handleLength}} мм</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Глубина рытья</p>
+                        <p class="tecinfo__item-value">{{tec.diggingDepth}} м</p>
+                     </div>
+                  </div>
+
+                  <div class="tecinfo__info-sec tecinfo__info-sec--full">
+                     <h4 class="tecinfo__item-title">Прочие характеристики</h4>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Макс. глубина копания</p>
+                        <p class="tecinfo__item-value">{{tec.maxDiggingDepth}} мм</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Макс. высота копания</p>
+                        <p class="tecinfo__item-value">{{tec.maxDigHeight}} мм</p>
+                     </div>
+                     <div class="tecinfo__item">
+                        <!-- <h4 class="tecinfo__item-title"></h4> -->
+                        <p class="tecinfo__item-text">Давление на грунт</p>
+                        <p class="tecinfo__item-value">{{tec.pressure}} кг/см</p>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="tecinfo__left-map">
+                  <h4 class="tecinfo__item-title">Маршруты</h4>
+                  <div class="site__block-map-w j-ymap-container" style="">
+                     <div class="loader loader-default"></div>
+                     <div id="map" style="height: 335px"></div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="tecinfo__right">
+               <img src="../../../assets/img/technic.png" alt="" class="tecinfo__right-technic-img">
+
+               <div class="tecinfo__info-sec">
+                  <h4 class="tecinfo__item-title">Текущие координаты</h4>
+                  <div class="tecinfo__item">
+                     <!-- <h4 class="tecinfo__item-title"></h4> -->
+                     <p class="tecinfo__item-text">Долгота</p>
+                     <p class="tecinfo__item-value">{{tec.longitude}}</p>
+                  </div>
+                  <div class="tecinfo__item">
+                     <!-- <h4 class="tecinfo__item-title"></h4> -->
+                     <p class="tecinfo__item-text">Широта</p>
+                     <p class="tecinfo__item-value">{{tec.latitude}}</p>
+                  </div>
+               </div>
+
+               <div class="tecinfo__info-sec">
+                  <h4 class="tecinfo__item-title">Пробег за неделю</h4>
+                  <app-bar-chart-four></app-bar-chart-four>
+               </div>
+
+               <div class="tecinfo__info-sec">
+                  <h4 class="tecinfo__item-title">Арентодатели</h4>
+                  <app-pie-chart-two></app-pie-chart-two>
+               </div>
+
+               <div class="tecinfo__info-sec">
+                  <h4 class="tecinfo__item-title">Расход топлива</h4>
+                  <app-doughnut-chart-two></app-doughnut-chart-two>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+</section>

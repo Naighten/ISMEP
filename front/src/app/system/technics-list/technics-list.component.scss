@@ -1,0 +1,112 @@
+.teclist {
+   width: 100%;
+   &__wrapper {
+      width: 100%;
+   }
+   &__title {
+      font-size: 32px;
+      line-height: 130%;
+      color: #ffffff;
+      margin-bottom: 20px;
+   }
+   &__top {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      &-select {
+         width: 20%;
+         background: none;
+         color: #ffffff;
+         font-size: 24px;
+         line-height: 130%;
+         padding: 10px;
+         cursor: pointer;
+         text-align: center;
+      }
+      option {
+         background: #52437b;
+      }
+   }
+
+   &__list {
+      width: 100%;
+      background: rgba(87, 71, 125, 0.28);
+      &-top {
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+         align-items: center;
+         .teclist__top-title {
+            width: 22%;
+            text-align: center;
+            padding: 0 10px;
+            font-size: 22px;
+            line-height: 130%;
+            &:nth-child(1) {
+               max-width: 60px;
+               width: 100%;
+               padding: 0;
+            }
+            &:nth-child(2) {
+               width: 30%;
+            }
+            &:nth-child(3) {
+               width: 25%;
+            }
+            &:nth-child(4) {
+               width: 15%;
+            }
+            &:nth-child(5) {
+               width: 18%;
+            }
+         }
+      }
+      &-item {
+         padding: 20px 25px;
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+         align-items: center;
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         &:nth-child(even) {
+            background: #2d2442;
+         }
+         .teclist__item-img {
+            max-width: 60px;
+            width: 100%;
+         }
+         .teclist__item-text {
+            padding: 0 10px;
+            width: 18%;
+            text-align: center;
+            font-size: 16px;
+            line-height: 120%;
+            &:nth-child(4) {
+               width: 15%;
+            }
+         }
+         .teclist__item-name {
+            width: 30%;
+            font-size: 14px;
+            line-height: 120%;
+            color: #ffffff;
+            &:hover {
+               color: #52437b;
+            }
+         }
+         .teclist__item-status {
+            width: 25%;
+            border-radius: 22px;
+            text-align: center;
+            display: flex;
+            padding: 8px 12px;
+            justify-content: center;
+            align-items: center;
+         }
+      }
+   }
+}

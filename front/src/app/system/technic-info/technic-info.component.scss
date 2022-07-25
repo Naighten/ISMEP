@@ -1,0 +1,210 @@
+.technic {
+   width: 100%;
+   &__wrapper {
+      width: 100%;
+   }
+}
+
+.tecinfo__item {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   &-title {
+      font-size: 32px;
+      line-height: 130%;
+      color: #ffffff;
+   }
+   &-text {
+      font-size: 20px;
+      line-height: 130%;
+      color: #ffffff;
+   }
+   &-value {
+      width: 50%;
+      margin-left: 15px;
+      color: #ffffff;
+      background: #382e53;
+      padding: 10px 15px;
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 130%;
+   }
+}
+
+.tecinfo {
+   &__top {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      &-item {
+         display: flex;
+         align-items: center;
+         margin-bottom: 20px;
+         &:nth-child(2) {
+            padding: 0 20px;
+         }
+      }
+      &-title {
+         font-size: 24px;
+         line-height: 130%;
+         color: #ffffff;
+      }
+      &-input {
+         background: #382e53;
+         padding: 10px 15px;
+         color: #ffffff;
+         font-size: 20px;
+         line-height: 130%;
+         margin-left: 15px;
+      }
+   }
+
+   &__main {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+   &__left {
+      width: 60%;
+      padding-right: 20px;
+      &-top {
+         width: 100%;
+         margin-bottom: 40px;
+      }
+      &-info {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+      }
+      &-map {
+         width: 100%;
+         .tecinfo__item-title {
+            margin-bottom: 20px;
+         }
+         .tecinfo__map {
+            width: 100%;
+         }
+      }
+   }
+   &__info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &-sec {
+         width: 50%;
+         &:nth-child(even) {
+            padding-left: 30px;
+         }
+         margin-bottom: 40px;
+         .tecinfo__item-title {
+            margin-bottom: 20px;
+         }
+         .tecinfo__item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            .tecinfo__item-value {
+               max-width: 120px;
+            }
+         }
+         &--full {
+            width: 100%;
+            .tecinfo__item {
+               .tecinfo__item-value {
+                  max-width: 50%;
+               }
+            }
+         }
+      }
+   }
+
+   /////////////////////////////////
+
+   &__right {
+      width: 40%;
+      padding-left: 20px;
+      &-technic-img {
+         width: 100%;
+         margin-bottom: 20px;
+      }
+      .tecinfo__info-sec {
+         width: 100%;
+         .tecinfo__item {
+            .tecinfo__item-value {
+               max-width: 200px;
+            }
+         }
+      }
+   }
+}
+
+
+.site__block-map-w{
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+   background: url(https://loremflickr.com/1200/500) no-repeat center center/cover; /* your image or color*/
+}
+.site__block-map{
+   position: relative;
+   z-index: 7;
+   width: 100%;
+   cursor: pointer;
+   background-color: transparent;
+}
+
+/* Индикатор загрузки, который показывается до загрузки карты */
+.loader {
+  position: absolute;
+  z-index: 15;
+  top: -100%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0,0,0,.55);
+}
+
+.loader:after,
+.loader:before {
+ box-sizing: border-box;
+}
+
+.loader.is-active {
+ top: 0;
+ opacity: 1;
+}
+
+.loader-default:after {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  content: '';
+  animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+.loader-default:before{
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translateX(-50%);
+   height: 48px;
+   content: 'Загрузка карты';
+   color: #fff;
+   font-size: 24px;
+   text-align: center;
+}
+
+@keyframes rotation {from {transform: rotate(0);} to {transform: rotate(359deg);}}
+@keyframes blink {from {opacity: .5;} to {opacity: 1;}}

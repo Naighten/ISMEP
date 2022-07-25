@@ -1,0 +1,83 @@
+<section class="messenger">
+   <div class="container">
+      <div class="messenger__wrapper">
+         <div class="messenger__left">
+            <h2 class="messenger__title">Собеседники</h2>
+            <ul class="messenger__list">
+               <ng-container *ngFor="let message of messages">
+                  <li class="messenger__list-item"
+                     [className]="message.isActive ? 'messenger__list-item messenger__list-item--active' : 'messenger__list-item'"
+                     (click)="toggleDialog(message)">
+                     <img src="{{message.img}}" alt="" class="messenger__list-img">
+                     <div class="messenger__list-item--online" *ngIf="message.isOnline"></div>
+                     <div class="messenger__list-info">
+                        <p class="messenger__list-info--name">{{message.name}}</p>
+                        <p class="messenger__list-info--text">
+                           <span class="messenger__list-info--text-you" *ngIf="message.youActive">Вы: </span>
+                           {{message.desc}}
+                        </p>
+                     </div>
+                  </li>
+               </ng-container>
+
+            </ul>
+         </div>
+
+         <div class="messenger__right">
+            <div class="messenger__dialog">
+               <div class="messenger__dialog-top">
+                  <h4 class="messenger__dialog-top--name">{{rightDialog.name}}</h4>
+                  <p class="messenger__dialog-top--status">
+                     <span class="messenger__dialog-top--online" *ngIf="rightDialog.isOnline"></span>
+                     <span *ngIf="rightDialog.isOnline">
+                        онлайн
+                     </span>
+                     <span *ngIf="!rightDialog.isOnline">
+                        оффлайн
+                     </span>
+                  </p>
+               </div>
+
+               <div class="messenger__dialog-main">
+                  <ng-container *ngIf="rightDialog.dialog.length > 0; else dialogEmpty">
+                     <div class="messenger__main-item" *ngFor="let mes of rightDialog.dialog">
+                        <img src="{{mes.img}}" alt="" class="messenger__main-item--img">
+                        <div class="messenger__main-item--info">
+                           <p class="messenger__main-item--name">
+                              <span class="name">{{mes.name}}</span>
+                              <span class="time">{{mes.time}}</span>
+                           </p>
+                           <p class="messenger__main-item--text">
+                              <span class="file" *ngIf="mes.isFile">
+                                 <img src="../../../assets/img/file.png" alt="" class="file-img">
+                              </span>
+                              {{mes.text}}
+                           </p>
+                        </div>
+                     </div>
+                  </ng-container>
+                  <ng-template #dialogEmpty>
+                     <p style="text-align: center;">
+                        Диалог пуст
+                     </p>
+                  </ng-template>
+               </div>
+
+               <div class="messenger__dialog-bot">
+                  <label for="messageFile" class="messenger__bot-upload--label">
+                     <input type="file" class="messenger__bot-upload--input" id="messageFile">
+                     <img src="../../../assets/img/file.png" alt="" class="messenger__bot-upload--img">
+                  </label>
+
+                  <input class="messenger__bot-input" name="messageText" [(ngModel)]="messageText" type="text"
+                     placeholder="Напишите сообщение...">
+
+                  <button class="messenger__bot-submit" (click)="sendMessage(rightDialog, messageText)">
+                     <img src="../../../assets/img/send.png" alt="" class="messenger__bot-submit--img">
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

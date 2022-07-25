@@ -1,0 +1,67 @@
+<div class="ideas">
+   <div class="container">
+      <div class="ideas__wrapper">
+         <div class="ideas__top">
+            <form action="" class="ideas__top-form">
+               <textarea class="ideas__top-form--textarea" name="ideaText" [(ngModel)]="ideaText" id="" cols="30"
+                  rows="3" placeholder="Поделитесь своей идеей!"></textarea>
+               <button class="ideas__top-form--btn" (click)="sendIdea(ideaText)">
+                  Отправить
+               </button>
+            </form>
+         </div>
+
+         <ul class="ideas__lsit">
+            <li class="ideas__list-item" *ngFor="let idea of ideas">
+               <img src="{{idea.author}}" alt="" class="ideas__list-img">
+               <div class="ideas__list-wrapper">
+                  <div class="ideas__list-info">
+                     <h4 class="ideas__list-info--title">{{idea.title}}</h4>
+                     <p class="ideas__list-info--text">
+                        {{idea.text}}
+                     </p>
+                     <div class="ideas__list-bot">
+                        <div class="ideas__list-btns">
+                           <div class="ideas__list-btn" (click)="likeIdea(idea)">
+                              <img src="../../../assets/img/like.png" alt="" class="ideas__list-btn--img">
+                              <p class="ideas__list-btn--text">{{idea.like}}</p>
+                           </div>
+                           <div class="ideas__list-btn" (click)="dislikeIdea(idea)">
+                              <img src="../../../assets/img/dislike.png" alt="" class="ideas__list-btn--img">
+                              <p class="ideas__list-btn--text">{{idea.dislike}}</p>
+                           </div>
+                           <div class="ideas__list-btn" (click)="commentsIdea(idea)">
+                              <img src="../../../assets/img/comments.png" alt="" class="ideas__list-btn--img">
+                              <p class="ideas__list-btn--text">{{idea.numComments}}</p>
+                           </div>
+                        </div>
+
+                        <input type="text" class="ideas__list-numcomment" placeholder="Комментировать..."
+                           (click)="commentsIdea(idea)">
+                     </div>
+                  </div>
+
+                  <div class="ideas__list-comments" *ngIf="idea.isActiveComment">
+                     <div class="ideas__list-comment" *ngFor="let comment of idea.comments">
+                        <img src="{{idea.author}}" alt="" class="ideas__list-comment--img">
+                        <div class="ideas__list-comment--info">
+                           <p class="ideas__list-comment--title">{{comment.title}}</p>
+                           <p class="ideas__list-comment--text">{{comment.text}}</p>
+                        </div>
+                     </div>
+
+                     <form action="" class="ideas__list-form">
+                        <img src="{{idea.author}}" alt="" class="ideas__list-img">
+                        <textarea class="ideas__list-form--textarea" name="commentText" [(ngModel)]="commentText" id=""
+                           cols="30" rows="5" placeholder="Прокомментируйте идею!"></textarea>
+                        <button class="ideas__list-form--btn" (click)="sendComment(idea, commentText)">
+                           <img src="../../../assets/img/upload.png" alt="" class="ideas__list-form--img">
+                        </button>
+                     </form>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>

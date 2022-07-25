@@ -1,0 +1,60 @@
+<section class="teclist">
+   <div class="container">
+      <div class="teclist__wrapper">
+         <h2 class="teclist__title">Техника</h2>
+         <div class="dropdown">
+            <select name="" id="month" class="dropdown__select" [(ngModel)]="selected_month" (change)="get_technics_list(selected_month)">
+              <option *ngFor="let month of monthes" [value]="month.index">{{month.name}}</option>
+            </select>
+         </div>
+         <div class="teclist__top">
+            <select name="" id="" class="teclist__top-select">
+               <option value="">Тип техники</option>
+               <option value=""></option>
+               <option value=""></option>
+            </select>
+            <select name="" id="" class="teclist__top-select">
+               <option value="">Производитель</option>
+               <option value=""></option>
+               <option value=""></option>
+            </select>
+            <select name="" id="" class="teclist__top-select">
+               <option value="">Статус</option>
+               <option value=""></option>
+               <option value=""></option>
+            </select>
+            <!--<select name="" id="" class="teclist__top-select">
+               <option value="">Пробег</option>
+               <option value=""></option>
+               <option value=""></option>
+            </select>
+            <select name="" id="" class="teclist__top-select">
+               <option value="">Характеристика</option>
+               <option value=""></option>
+               <option value=""></option>
+            </select>-->
+         </div>
+
+         <ul *ngIf="technics.length != 0" class="teclist__list">
+            <li class="teclist__list-item teclist__list-top">
+               <h4 class="teclist__top-title"></h4>
+               <h4 class="teclist__top-title">Наименование</h4>
+               <h4 class="teclist__top-title">Статус</h4>
+               <!--<h4 class="teclist__top-title">Пробег</h4>
+               <h4 class="teclist__top-title">Характеристика</h4>-->
+            </li>
+            <li class="teclist__list-item" *ngFor="let technic of technics">
+               <img src="../../../assets/img/sharing__bg.png" alt="" class="teclist__item-img">
+               <a href="technic-info" class="teclist__item-text teclist__item-name">
+                  {{technic.name}}
+               </a>
+               <p class="teclist__item-text teclist__item-status" style="background-color: #EBF9F1; color: #1F9254;">
+                  {{technic.status}}
+               </p>
+               <!--<p class="teclist__item-text">687</p>
+               <p class="teclist__item-text">787</p>-->
+            </li>
+         </ul>
+      </div>
+   </div>
+</section>
